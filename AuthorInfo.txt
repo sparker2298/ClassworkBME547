@@ -1,0 +1,7 @@
+#Here is a file with my personal information
+
+I am Steven and here are facts:
+*I am 23
+*I have a cat
+*I like to cook
+
