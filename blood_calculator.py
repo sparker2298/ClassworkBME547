@@ -30,4 +30,15 @@ def check_HDL(HDL_value):
 		ans = "Low"
 	return ans
 	
+def print_result(test_name,test_value,test_class):
+	out_string = "The test value of {} for {} is {}".format(test_value,test_name,test_class)
+	print(out_string)
+
+def HDL_Driver():
+	HDL_value - accept_input("HDL")
+	
+	result = check_HDL(HDL_value)
+	
+	print_result("HDL", HDL_value, result)
+	
 interface()
