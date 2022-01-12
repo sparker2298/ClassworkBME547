@@ -7,12 +7,15 @@ def interface():
 	while keep_running:
 	
 		print("Options:")
+		print("1-HDL")
 		print(" 9-Quit")
 		
 		choice = input("Enter your choice: ")
 		
 		if choice == "9": # Make sure this is a string
 			keep_running = False
+		elif choice == "1":
+			HDL_Driver()
 			
 	return
 		
@@ -35,7 +38,7 @@ def print_result(test_name,test_value,test_class):
 	print(out_string)
 
 def HDL_Driver():
-	HDL_value - accept_input("HDL")
+	HDL_value = accept_input("HDL")
 	
 	result = check_HDL(HDL_value)
 	
