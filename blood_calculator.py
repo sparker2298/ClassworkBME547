@@ -16,4 +16,9 @@ def interface():
 			
 	return
 		
+	
+def accept_input(test_name):
+	entry = input("Enter the {} test Result: ".format(test_name))
+	return int(entry)
+	
 interface()
