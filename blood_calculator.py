@@ -1,4 +1,5 @@
 #This will be the calculator for blood values
+print("This is the blood_calculator module and python calls it {}".format(__name__))
 
 def interface():
 	print("Blood test analysis")
@@ -87,4 +88,5 @@ def TC_Driver():
 	
 	print_result("TC", TC_value, result)
 	
-interface()
+if __name__ == "__main__":
+	interface()
