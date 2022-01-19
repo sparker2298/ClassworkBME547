@@ -9,6 +9,7 @@ def interface():
 		print("Options:")
 		print("1-HDL")
 		print("2-LDL")
+		print("3-TC")
 		print(" 9-Quit")
 		
 		choice = input("Enter your choice: ")
@@ -19,6 +20,8 @@ def interface():
 			HDL_Driver()
 		elif choice == "2":
 			LDL_Driver()
+		elif choice == "3":
+			TC_Driver()
 			
 	return
 		
@@ -66,5 +69,22 @@ def LDL_Driver():
 	result = check_LDL(LDL_value)
 	
 	print_result("LDL", LDL_value, result)
+	
+#Total Cholesterol Functions
+def check_TC(TC_value):
+	if TC_value >= 240:
+		ans = "High"
+	elif 240 > TC_value >= 200:
+		ans = "Borderline High"
+	else:
+		ans = "Normal"
+	return ans
+
+def TC_Driver():
+	TC_value = accept_input("TC")
+	
+	result = check_TC(TC_value)
+	
+	print_result("TC", TC_value, result)
 	
 interface()
