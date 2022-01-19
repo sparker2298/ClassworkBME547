@@ -8,6 +8,7 @@ def interface():
 	
 		print("Options:")
 		print("1-HDL")
+		print("2-LDL")
 		print(" 9-Quit")
 		
 		choice = input("Enter your choice: ")
@@ -16,6 +17,8 @@ def interface():
 			keep_running = False
 		elif choice == "1":
 			HDL_Driver()
+		elif choice == "2":
+			LDL_Driver()
 			
 	return
 		
@@ -24,6 +27,11 @@ def accept_input(test_name):
 	entry = input("Enter the {} test Result: ".format(test_name))
 	return int(entry)
 	
+def print_result(test_name,test_value,test_class):
+	out_string = "The test value of {} for {} is {}".format(test_value,test_name,test_class)
+	print(out_string)
+	
+#HDL Functions
 def check_HDL(HDL_value):
 	if HDL_value >= 60:
 		ans = "Normal"
@@ -33,15 +41,30 @@ def check_HDL(HDL_value):
 		ans = "Low"
 	return ans
 	
-def print_result(test_name,test_value,test_class):
-	out_string = "The test value of {} for {} is {}".format(test_value,test_name,test_class)
-	print(out_string)
-
 def HDL_Driver():
 	HDL_value = accept_input("HDL")
 	
 	result = check_HDL(HDL_value)
 	
 	print_result("HDL", HDL_value, result)
+	
+#LDL Functions
+def check_LDL(LDL_value):
+	if LDL_value >= 190:
+		ans = "Very High"
+	elif 190 > LDL_value >= 160:
+		ans = "High"
+	elif 160 > LDL_value >= 130:
+		ans = "Borderline High"
+	else:
+		ans = "Normal"
+	return ans
+
+def LDL_Driver():
+	LDL_value = accept_input("LDL")
+	
+	result = check_LDL(LDL_value)
+	
+	print_result("LDL", LDL_value, result)
 	
 interface()
